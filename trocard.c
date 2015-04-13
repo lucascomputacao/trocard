@@ -14,7 +14,7 @@
  */
 int main(int argc, char** argv) {
     long int array[MAXVETOR];
-    long int i;
+    long int i,compare, count;
     char vetchar[MAXVETOR];
     int alice, beatriz;
     /*
@@ -38,10 +38,20 @@ int main(int argc, char** argv) {
             scanf("%d", &vetchar[i]);
             printf("lido:%d\t", vetchar[i]);
         }
+        if (vetchar[15] == NULL) {
+            printf("\n Nulo o teste");
+        }
+        printf("tamanho char: %ld\n", sizeof (vetchar));
         //terceira linha - cartas de Beatriz
         for (i = 0; i < beatriz; i++) {
             printf("\nSequencia de Beatriz\n");
-            // função de hashing?
+            // função de hashing? teste para saber se há no vetor
+            scanf("%d", compare);
+            // teste para saber se temos a carta já armazenada no vetor
+            if (vetchar[compare] == NULL) {
+                //se der nulo, Alice não tem essa carta 
+                count++;
+            }
         }
 
     } while (alice != 0 && beatriz != 0);
